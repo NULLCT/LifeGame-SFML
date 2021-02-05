@@ -76,7 +76,36 @@ ST:
     }
   }
 
+  //Glider
   mp0[1][0].first = mp0[2][1].first = mp0[0][2].first = mp0[1][2].first = mp0[2][2].first = true;
+
+  //Nebra
+  {
+    sf::Vector2i pos(10,50);
+
+    for(int i=0;i<6;i++)
+      mp0[pos.y][pos.x+i].first = mp0[pos.y+1][pos.x+i].first = true;
+    for(int i=0;i<6;i++)
+      mp0[pos.y+7][pos.x+i+3].first = mp0[pos.y+1+7][pos.x+i+3].first = true;
+
+    for(int i=0;i<6;i++)
+      mp0[pos.y+i][pos.x+7].first = mp0[pos.y+i][pos.x+7+1].first = true;
+    for(int i=0;i<6;i++)
+      mp0[pos.y+i+3][pos.x].first = mp0[pos.y+i+3][pos.x+1].first = true;
+  }
+  {
+    sf::Vector2i pos(50,10);
+
+    for(int i=0;i<6;i++)
+      mp0[pos.y][pos.x+i].first = mp0[pos.y+1][pos.x+i].first = true;
+    for(int i=0;i<6;i++)
+      mp0[pos.y+7][pos.x+i+3].first = mp0[pos.y+1+7][pos.x+i+3].first = true;
+
+    for(int i=0;i<6;i++)
+      mp0[pos.y+i][pos.x+7].first = mp0[pos.y+i][pos.x+7+1].first = true;
+    for(int i=0;i<6;i++)
+      mp0[pos.y+i+3][pos.x].first = mp0[pos.y+i+3][pos.x+1].first = true;
+  }
 
   bool tr=false;
 
