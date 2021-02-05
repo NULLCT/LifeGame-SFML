@@ -58,6 +58,8 @@ int main() {
   vector<vector<pair<bool, sf::RectangleShape>>> mp0(mpsize,vector<pair<bool,sf::RectangleShape>>(mpsize));
   vector<vector<pair<bool, sf::RectangleShape>>> mp1(mpsize,vector<pair<bool,sf::RectangleShape>>(mpsize));
 
+ST:
+
   //init mp
   for(int i=0;i<mpsize;i++){
     for(int j=0;j<mpsize;j++){
@@ -86,6 +88,10 @@ int main() {
         window.close();
         break;
       }
+    }
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+      goto ST;
     }
     window.clear();
 
