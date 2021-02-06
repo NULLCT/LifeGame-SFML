@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
+#include <random>
+#include <ctime>
 
 using namespace std;
 
@@ -51,6 +53,8 @@ void updateCells(vector<vector<pair<bool, sf::RectangleShape>>>& _begin,
 int main() {
   sf::RenderWindow window(sf::VideoMode(1000, 1000), "LifeGame-SFML");
   window.setFramerateLimit(60);
+
+  srand(time(NULL));
 
   constexpr int mpsize = 100;
 
@@ -105,6 +109,10 @@ ST:
       mp0[pos.y+i][pos.x+7].first = mp0[pos.y+i][pos.x+7+1].first = true;
     for(int i=0;i<6;i++)
       mp0[pos.y+i+3][pos.x].first = mp0[pos.y+i+3][pos.x+1].first = true;
+  }
+
+  for(auto && i: mp0) for(auto && j: i){
+    j.first = rand()%2;
   }
 
   bool tr=false;
