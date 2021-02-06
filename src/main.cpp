@@ -56,7 +56,9 @@ int main() {
 
   srand(time(NULL));
 
-  constexpr int mpsize = 100;
+  int mpsize;
+  cout<<"size?: ";
+  cin>>mpsize;
 
   // mp0 -> mp1 -> mp0 -> ...
   vector<vector<pair<bool, sf::RectangleShape>>> mp0(mpsize,vector<pair<bool,sf::RectangleShape>>(mpsize));
@@ -80,6 +82,7 @@ ST:
     }
   }
 
+  /*
   //Glider
   mp0[1][0].first = mp0[2][1].first = mp0[0][2].first = mp0[1][2].first = mp0[2][2].first = true;
 
@@ -110,7 +113,9 @@ ST:
     for(int i=0;i<6;i++)
       mp0[pos.y+i+3][pos.x].first = mp0[pos.y+i+3][pos.x+1].first = true;
   }
+  */
 
+  //Random
   for(auto && i: mp0) for(auto && j: i){
     j.first = rand()%2;
   }
